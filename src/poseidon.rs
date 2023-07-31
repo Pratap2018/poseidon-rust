@@ -1,5 +1,5 @@
 #![allow(clippy::too_many_arguments)]
-#![allow(clippy::derive_hash_xor_eq)]
+#![allow(clippy::derived_hash_with_manual_eq)]
 
 use crate::{
     constants::{load_constants, Constants},

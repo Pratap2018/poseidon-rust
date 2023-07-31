@@ -1,21 +1,28 @@
 [package]
 name = "bloock-poseidon-rs"
 version = "0.1.0"
+authors = [
+    "Marc Baqué <marc@bloock.com>",
+    "Eduard Tomàs <eduard.tomas@bloock.com>",
+]
 edition = "2021"
+description = "Poseidon hash implementation"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/bloock/bloock-poseidon-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 ff = { package = "ff_ce", version = "0.13", features = ["derive"] }
 rand = "0.4"
-serde_json = "1.0"
 hex = "0.4.3"
 num-bigint = "0.4.3"
 num-traits = "0.2.16"
 
 [dev-dependencies]
 lazy_static = "1.4.0"
-criterion = "0.3"
+criterion = "0.5"
 
 [[bench]]
 name = "poseidon_hash"
