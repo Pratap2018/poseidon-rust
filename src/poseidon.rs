@@ -1,3 +1,6 @@
+#![allow(clippy::too_many_arguments)]
+#![allow(clippy::derive_hash_xor_eq)]
+
 use crate::{
     constants::{load_constants, Constants},
     hash::PoseidonHash,
