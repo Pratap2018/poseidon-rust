@@ -55,8 +55,8 @@ impl From<Fr> for PoseidonHash {
     }
 }
 
-impl From<BigUint> for PoseidonHash {
-    fn from(value: BigUint) -> Self {
+impl From<&BigUint> for PoseidonHash {
+    fn from(value: &BigUint) -> Self {
         PoseidonHash(Fr::from_str(&value.to_string()).unwrap_or(Fr::default()))
     }
 }
@@ -64,6 +64,6 @@ impl From<BigUint> for PoseidonHash {
 impl From<&[u8]> for PoseidonHash {
     fn from(value: &[u8]) -> Self {
         let bigint = BigUint::from_bytes_be(value);
-        PoseidonHash::from(bigint)
+        PoseidonHash::from(&bigint)
     }
 }
