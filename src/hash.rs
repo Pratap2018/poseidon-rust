@@ -1,8 +1,9 @@
-use num_bigint::BigInt;
-
+use crate::ff::Field;
 use crate::ff::{PrimeField, PrimeFieldRepr};
-use crate::poseidon::Fr;
+use crate::poseidon::{Fr, FrRepr};
+use num_bigint::{BigInt, BigUint};
 
+#[derive(Debug, Clone)]
 pub struct PoseidonHash(Fr);
 
 impl PoseidonHash {
@@ -27,9 +28,9 @@ impl PoseidonHash {
         hex::encode(bytes)
     }
 
-    pub fn bigint(&self) -> BigInt {
+    pub fn bigint(&self) -> BigUint {
         let bytes = self.bytes_be();
-        BigInt::from_bytes_be(num_bigint::Sign::Plus, bytes.as_slice())
+        BigUint::from_bytes_be(bytes.as_slice())
     }
 
     pub fn string(&self) -> String {
@@ -42,8 +43,21 @@ impl PoseidonHash {
     }
 }
 
+impl Default for PoseidonHash {
+    fn default() -> Self {
+        Self(Fr::zero())
+    }
+}
+
 impl From<Fr> for PoseidonHash {
     fn from(value: Fr) -> Self {
         PoseidonHash(value)
+    }
+}
+
+impl From<&[u8]> for PoseidonHash {
+    fn from(value: &[u8]) -> Self {
+        let bigint = BigUint::from_bytes_be(value);
+        PoseidonHash(Fr::from_str(&bigint.to_string()).unwrap_or(Fr::default()))
     }
 }
