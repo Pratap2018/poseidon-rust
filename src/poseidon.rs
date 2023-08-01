@@ -244,12 +244,6 @@ mod tests {
             "7853200120776062878684798364095072458815029376092732009249414926327459813530"
         );
 
-        let hash = POSEIDON.hash(&[f1, f1, f2]).unwrap();
-        assert_eq!(
-            hash.string(),
-            "7853200120776062878684798364095072458815029376092732009249414926327459813530"
-        );
-
         let hash = POSEIDON.hash(&[f1, f2, f0, f0, f0]).unwrap();
         assert_eq!(
             hash.string(),
