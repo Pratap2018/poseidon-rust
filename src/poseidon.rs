@@ -205,12 +205,8 @@ impl Poseidon {
 #[cfg(test)]
 mod tests {
     use crate::ff::PrimeField;
-    use crate::poseidon::{Fr, Poseidon};
-    use lazy_static::lazy_static;
-
-    lazy_static! {
-        static ref POSEIDON: Poseidon = Poseidon::default();
-    }
+    use crate::poseidon::Fr;
+    use crate::POSEIDON;
 
     #[test]
     fn test_poseidon() {
