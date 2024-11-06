@@ -1,4 +1,4 @@
-use bloock_poseidon_rs::poseidon::{Fr, Poseidon};
+use poseidon_rust::poseidon::{Fr, Poseidon};
 use criterion::{criterion_group, criterion_main, Criterion};
 use ff::PrimeField;
 

@@ -1,4 +1,4 @@
-# bloock-poseidon-rs
+# poseidon-rust
 
 A Rust implementation for the Poseidon Hash function for BN254 curve.
 

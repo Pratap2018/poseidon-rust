@@ -1,15 +1,10 @@
 [package]
-name = "bloock-poseidon-rs"
+name = "poseidon-rust"
 version = "0.1.5"
-authors = [
-    "Marc Baqué <marc@bloock.com>",
-    "Eduard Tomàs <eduard.tomas@bloock.com>",
-]
+
 edition = "2021"
 description = "Poseidon hash implementation"
-readme = "README.md"
-license = "MIT"
-repository = "https://github.com/bloock/bloock-poseidon-rs"
+repository = "https://github.com/Pratap2018/poseidon-rust"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
